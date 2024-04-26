@@ -5,9 +5,7 @@
 
 PIMAGE_DOS_HEADER ntDll;
 
-// scam the linker, and export so that other things can get at it
-#define MAKE_FUNCTION_STUB(name)                                                                                       \
-    void *__imp_##name;                                                                                               \
+#define MAKE_FUNCTION_STUB(name) void *__imp_##name;
 
 MAKE_FUNCTION_STUB(LdrGetProcedureAddress);
 MAKE_FUNCTION_STUB(DbgPrint);

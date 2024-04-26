@@ -1,6 +1,12 @@
 add_rules("mode.debug", "mode.release", "plugin.vsxmake.autoupdate")
 set_policy("check.auto_ignore_flags", false)
 
+if is_mode("debug") then
+    add_defines("HACK_DEBUG")
+elseif is_mode("release") then
+    add_defines("HACK_RELEASE")
+end
+
 add_includedirs(
     "$(scriptdir)",
     "deps/phnt/include"

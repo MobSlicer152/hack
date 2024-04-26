@@ -1,5 +1,6 @@
 #include "hack.h"
 
+#pragma function(memcpy)
 void *memcpy(void *restrict destination, void *restrict source, size_t maxCount)
 {
     size_t i;
@@ -12,6 +13,7 @@ void *memcpy(void *restrict destination, void *restrict source, size_t maxCount)
     return destination;
 }
 
+#pragma function(memccpy)
 void *memccpy(void *restrict destination, void *restrict source, int c, size_t maxCount)
 {
     size_t i;
